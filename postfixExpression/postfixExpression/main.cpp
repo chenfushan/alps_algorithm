@@ -22,7 +22,7 @@ struct Node{
 
 Stack createStack(){
     Stack S;
-    S = (Stack)malloc(sizeof(Stack));
+    S = (Stack)malloc(sizeof(Node));
     S->Next = NULL;
     return S;
 }
@@ -33,7 +33,7 @@ int isEmpty(Stack S){
 
 void Push(Stack S, ElementType element){
     Stack tmp;
-    tmp = (Stack)malloc(sizeof(Stack));
+    tmp = (Stack)malloc(sizeof(Node));
     tmp->X = element;
     tmp->Next = S->Next;
     S->Next = tmp;

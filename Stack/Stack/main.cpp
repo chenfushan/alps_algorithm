@@ -25,14 +25,14 @@ int isEmpty(Stack S){
 
 Stack createStack(void){
     Stack S;
-    S = (Stack)malloc(sizeof(Stack));
+    S = (Stack)malloc(sizeof(Node));
     S->Next = NULL;
     return S;
 }
 
 void Push(Stack S, int X){
     Stack element;
-    element = (Stack)malloc(sizeof(Stack));
+    element = (Stack)malloc(sizeof(Node));
     element->X = X;
     element->Next = S->Next;
     S->Next = element;

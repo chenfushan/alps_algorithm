@@ -82,6 +82,17 @@ void Delete(int X, List L){
     }
 }
 
+//void Delete(int X, List *L){
+//    Position *P;
+//    *P = Find(X, *L);
+//    Position *tmp;
+//    if (!IsLast(*P, *L)) {
+//        tmp = P;
+//        *P = (*P)->Next;
+//        free(*tmp);
+//    }
+//}
+
 void Insert(int X, List L, Position P){
     Position tmp = (Position)malloc(sizeof(struct Node));
     if (tmp == NULL) {
@@ -120,9 +131,9 @@ int main(int argc, const char * argv[])
     printf("%d\n",P->Element);
     P = FindPrevious(3, L);
     printf("%d\n",P->Element);
-//    Delete(2, L);
+    Delete(3, L);
     Print(L);
-    DeleteList(L);
+//    DeleteList(L);
     Print(L);
     
     return 0;

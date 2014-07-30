@@ -24,8 +24,8 @@ struct Node{
 Queue createQueue(void){
     Queue Q;
     Queue Q2;
-    Q2 = (Queue)malloc(sizeof(Queue));
-    Q = (Queue)malloc(sizeof(Queue));
+    Q2 = (Queue)malloc(sizeof(Node));
+    Q = (Queue)malloc(sizeof(Node));
     Q->X = 0;
     Q->Next = Q2;
     Q->Pre = Q2;
@@ -41,9 +41,9 @@ int isEmpty(Queue Q){
 void intoQueue(Queue Q, ElementType element){
     Queue tmp;
     Queue tmp1;
-    tmp1 = (Queue)malloc(sizeof(Queue));
+    tmp1 = (Queue)malloc(sizeof(Node));
 //    Queue switchTmp;
-    tmp = (Queue)malloc(sizeof(Queue));
+    tmp = (Queue)malloc(sizeof(Node));
     tmp->X = element;
     tmp->Next = Q->Next;
     Q->Next->Pre = tmp;
