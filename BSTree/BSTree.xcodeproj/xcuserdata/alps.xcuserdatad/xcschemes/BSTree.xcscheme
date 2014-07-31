@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "544D57741987EF95005B2645"
+               BlueprintIdentifier = "5461BD461989CE52008AB0D2"
                BuildableName = "BSTree"
                BlueprintName = "BSTree"
                ReferencedContainer = "container:BSTree.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "544D57741987EF95005B2645"
+            BlueprintIdentifier = "5461BD461989CE52008AB0D2"
             BuildableName = "BSTree"
             BlueprintName = "BSTree"
             ReferencedContainer = "container:BSTree.xcodeproj">
@@ -51,7 +51,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "544D57741987EF95005B2645"
+            BlueprintIdentifier = "5461BD461989CE52008AB0D2"
             BuildableName = "BSTree"
             BlueprintName = "BSTree"
             ReferencedContainer = "container:BSTree.xcodeproj">
@@ -69,7 +69,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "544D57741987EF95005B2645"
+            BlueprintIdentifier = "5461BD461989CE52008AB0D2"
             BuildableName = "BSTree"
             BlueprintName = "BSTree"
             ReferencedContainer = "container:BSTree.xcodeproj">
