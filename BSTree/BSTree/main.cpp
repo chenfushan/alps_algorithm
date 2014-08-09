@@ -118,6 +118,7 @@ TreeNode deleteTree(ElementType X, TreeNode T){
                 T = T->left;
             }
             free(tmp);
+            tmp = NULL;
         }
     }
     return T;
