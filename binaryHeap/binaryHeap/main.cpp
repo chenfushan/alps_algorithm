@@ -116,6 +116,60 @@ ElementType DeleteMin(PriorityQuenue P){
     }
 }
 
+int Min(ElementType &a ,ElementType &b, ElementType &c){
+    if (b < c) {
+        if (b < a) {
+            b = a+b;
+            a = b-a;
+            b = b-a;
+            return 1;
+        }else{
+            return -1;
+        }
+    }else{
+        if (c < a) {
+            c = a+c;
+            a = c-a;
+            c = c-a;
+            return 0;
+        }else{
+            return -1;
+        }
+    }
+}
+
+//void BuildHeap(PriorityQuenue P){
+//    int i = 0;
+//    int j = 0;
+//    for (i = P->Size/2; i > 0; i--) {
+//        for (j = i; j*2 <= P->Size;) {
+//            if (j * 2 != P->Size) {
+//                int temp = Min(P->elements[i],P->elements[i*2],P->elements[i*2+1]);
+//                if (temp == 0) {
+//                    j*=2;
+//                }
+//                if (temp == 1) {
+//                    j = j*2+1;
+//                }
+//                if (temp == -1) {
+//                    j *=2;
+//                }
+//            }else{
+//                //            P->elements[i] = P->elements[i]<P->elements[i*2]?P->elements[i]:P->elements[i*2];
+//                if (P->elements[j] > P->elements[j*2]) {
+//                    int tmp = P->elements[j*2];
+//                    P->elements[j*2] = P->elements[j];
+//                    P->elements[j] = tmp;
+//                    j *= 2;
+//                }else{
+//                    break;
+//                }
+//            }
+//        }
+//        
+//    }
+//}
+
 
 
 int main(int argc, const char * argv[])
@@ -132,10 +186,17 @@ int main(int argc, const char * argv[])
     Insert(P, 26);
     Insert(P, 32);
     Insert(P, 14);
+//    int a[]={13,21,16,24,31,19,68,65,26,32,14};
+//    int a[]={53,26,41,59,97,31,58};
+//    for (int i = 0; i < 11; i++) {
+//        P->elements[i+1] = a[i];
+//    }
+//    P->Size = sizeof(a)/sizeof(int);
     for (int i = 1; i <= P->Size; i++) {
        printf("%d ",P->elements[i]);
     }
     printf("\n");
+//    BuildHeap(P);
     DeleteMin(P);
     for (int i = 1; i <= P->Size; i++) {
         printf("%d ",P->elements[i]);
