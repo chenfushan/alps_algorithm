@@ -27,13 +27,15 @@ void BuildHeap(ElementType *A, int length){
                 if (A[j*2] > A[j*2+1] && A[j*2] > A[j]) {
                     Swap(A[j*2], A[j]);
                     j *= 2;
-                }
-                if (A[j*2+1] > A[j*2] && A[j*2+1] > A[j]) {
-                    Swap(A[j*2+1], A[j]);
-                    j = j*2+1;
                 }else{
-                   break;
+                    if (A[j*2+1] > A[j*2] && A[j*2+1] > A[j]) {
+                        Swap(A[j*2+1], A[j]);
+                        j = j*2+1;
+                    }else{
+                        break;
+                    }
                 }
+                
                 
             }else{
                 if (A[j*2] > A[j]) {
@@ -55,7 +57,7 @@ ElementType DeleteMax(ElementType *A, int length){
     LastElement = A[length];
     for (i = 1; i*2 < length; i = temp) {
         temp = i*2;
-        if (A[temp] > A[temp]+1) {
+        if (A[temp] > A[temp+1]) {
             A[i] = A[temp];
         }else{
             A[i] = A[temp+1];
@@ -88,6 +90,11 @@ int main(int argc, const char * argv[])
     for (int i = 1; i <= length; i++) {
         printf("%d ",A[i]);
     }
+    printf("\n");
+//    for (int i = 0; i < length; i++) {
+//        A[length-i] = DeleteMax(A, length-i);
+//        printf("%d ",A[length-i]);
+//    }
     printf("\n");
     return 0;
 }
