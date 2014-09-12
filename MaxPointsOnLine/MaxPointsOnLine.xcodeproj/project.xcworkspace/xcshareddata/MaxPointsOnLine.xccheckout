@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>88AAA310-FB0A-4772-BC88-9B6B0BEF7AFA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MaxPointsOnLine</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>81213F43-3224-446A-ACFD-D4E21390F71E</key>
+		<string>https://github.com/chenfushan/alps_algorithm.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MaxPointsOnLine/MaxPointsOnLine.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>81213F43-3224-446A-ACFD-D4E21390F71E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/chenfushan/alps_algorithm.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>81213F43-3224-446A-ACFD-D4E21390F71E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>81213F43-3224-446A-ACFD-D4E21390F71E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>c++</string>
+		</dict>
+	</array>
+</dict>
+</plist>
