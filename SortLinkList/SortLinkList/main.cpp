@@ -68,6 +68,7 @@ public:
                 temp->next = right;
                 right = right->next;
                 temp->next->next = left;
+                temp = temp->next;
             }
             
         }
@@ -92,20 +93,50 @@ int main(int argc, const char * argv[])
 {
 
     ListNode *head = (ListNode *)malloc(sizeof(struct ListNode));
-    head->val = 7;
+    head->val = -84;
     ListNode *tmp1 = head;
     ListNode *tmp2 = (ListNode *)malloc(sizeof(struct ListNode));;
     tmp1->next = tmp2;
-    tmp2->val = 2;
+    tmp2->val = 142;
     tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
     tmp2 = tmp2->next;
-    tmp2->val = 4;
+    tmp2->val = 41;
     tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
     tmp2 = tmp2->next;
-    tmp2->val = 3;
+    tmp2->val = -17;
     tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
     tmp2 = tmp2->next;
-    tmp2->val = 1;
+    tmp2->val = -71;
+    tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
+    tmp2 = tmp2->next;
+    tmp2->val = 170;
+    tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
+    tmp2 = tmp2->next;
+    tmp2->val = 186;
+    tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
+    tmp2 = tmp2->next;
+    tmp2->val = 183;
+    tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
+    tmp2 = tmp2->next;
+    tmp2->val = -21;
+    tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
+    tmp2 = tmp2->next;
+    tmp2->val = -76;
+    tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
+    tmp2 = tmp2->next;
+    tmp2->val = 76;
+    tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
+    tmp2 = tmp2->next;
+    tmp2->val = 10;
+    tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
+    tmp2 = tmp2->next;
+    tmp2->val = 29;
+    tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
+    tmp2 = tmp2->next;
+    tmp2->val = 81;
+    tmp2->next = (ListNode *)malloc(sizeof(struct ListNode));
+    tmp2 = tmp2->next;
+    tmp2->val = 112;
     tmp2->next = NULL;
     tmp1 = head;
     while (tmp1) {
@@ -119,6 +150,7 @@ int main(int argc, const char * argv[])
         printf("%d ",head->val);
         head = head->next;
     }
+    printf("\n");
     return 0;
 }
 
