@@ -18,15 +18,15 @@ struct ListNode{
 class Solution {
 public:
     ListNode *sortList(ListNode *head) {
-        if (!head) {
+        if (head == NULL) {
             return NULL;
         }
-        if (!head->next) {
+        if (head->next == NULL) {
             return head;
         }
         ListNode *mid = GetMid(head);
         ListNode *temp = NULL;
-        if (mid) {
+        if (mid != NULL) {
             temp = mid->next;
             mid->next = NULL;
         }
@@ -36,13 +36,13 @@ public:
         return head;
     }
     ListNode* MergeSort(ListNode *left, ListNode *right){
-        if (!left && !right) {
+        if (left == NULL && right == NULL) {
             return NULL;
         }
-        if (!left) {
+        if (left == NULL) {
             return right;
         }
-        if (!right) {
+        if (right == NULL) {
             return left;
         }
         ListNode *temp = NULL;
@@ -53,11 +53,11 @@ public:
             left->next = temp;
         }
         ListNode * head = left;
-        while (1) {
-            if (!right) {
+        while (right != NULL) {
+            if (right == NULL) {
                 break;
             }
-            if (!left) {
+            if (left == NULL) {
                 temp->next = right;
                 break;
             }
