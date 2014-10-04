@@ -15,6 +15,7 @@ public:
     int candy(vector<int> &ratings){
         int candy_num = 0;
         vector<int>::iterator iter;
+        
         return 0;
     }
 };

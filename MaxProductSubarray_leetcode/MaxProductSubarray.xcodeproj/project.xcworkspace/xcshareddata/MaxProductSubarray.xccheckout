@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C0FFF945-2F38-4F1C-9774-714E4D08659C</string>
+	<string>AD3B06B5-9B6C-4925-B4C4-60E4AB0C0C1B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>candy_leetcode</string>
+	<string>MaxProductSubarray</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>90B94F628F65C99880E97F4334195480078E4D7C</key>
 		<string>https://github.com/chenfushan/alps_algorithm.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>candy_leetcode/candy_leetcode.xcodeproj/project.xcworkspace</string>
+	<string>MaxProductSubarray/MaxProductSubarray.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>90B94F628F65C99880E97F4334195480078E4D7C</key>
