@@ -62,8 +62,10 @@ void HuffmanCoding(HuffmanTree &HT, HuffmanCode &HC, int *w, int n){
         cd[count]='\0';
         printf("%s~%d\n",cd,i);
         HC[i] = (char *)malloc((count)*sizeof(char));
-        
-        strcpy(HC[i], cd);
+        for (int j = count; j>=0; j--) {
+            HC[i][count-j] = cd[j-1];
+        }
+//        strcpy(HC[i], cd);
 //        memset(cd,'\0', n*sizeof(char));//error
     }
 }
