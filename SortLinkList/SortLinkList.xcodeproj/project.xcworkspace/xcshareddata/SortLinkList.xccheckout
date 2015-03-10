@@ -14,7 +14,7 @@
 		<string>https://github.com/chenfushan/alps_algorithm.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SortLinkList/SortLinkList.xcodeproj/project.xcworkspace</string>
+	<string>SortLinkList/SortLinkList.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>90B94F628F65C99880E97F4334195480078E4D7C</key>

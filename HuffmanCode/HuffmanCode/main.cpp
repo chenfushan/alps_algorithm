@@ -13,6 +13,7 @@ typedef struct HTNode{
     int parent;
     int lchild;
     int rchild;
+    HTNode(int w, int p, int l, int r):weight(w),parent(p),lchild(l),rchild(r){}
 }HTNode, *HuffmanTree;
 typedef char** HuffmanCode;
 
@@ -28,10 +29,10 @@ void HuffmanCoding(HuffmanTree &HT, HuffmanCode &HC, int *w, int n){
     m = n*2-1;//整棵树的节点数
     HT = (HuffmanTree)malloc((m+1) * sizeof(HTNode));//申请足够空间
     for (i = 1; i <= n; i++,w++) {
-        HT[i] = {*w, 0, 0, 0};
+        HT[i] = HTNode(*w, 0, 0, 0);
     }
     for (; i <= m; i++) {
-        HT[i] = {0, 0, 0, 0};
+        HT[i] = HTNode(0, 0, 0, 0);
     }
     for (i = n+1; i <= m; i++) {
         Select(HT,i-1,child1,child2);
