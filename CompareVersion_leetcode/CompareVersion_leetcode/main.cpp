@@ -89,8 +89,8 @@ public:
 
 
 int main(int argc, const char * argv[]) {
-    string ver1 = "1.1.0";
-    string ver2 = "1.1";
+    string ver1 = "1.1.3";
+    string ver2 = "1.10";
     Solution sl;
     printf("%d\n",sl.compareVersion(ver1, ver2));
     // insert code here...
