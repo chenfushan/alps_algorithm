@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include "Point.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...

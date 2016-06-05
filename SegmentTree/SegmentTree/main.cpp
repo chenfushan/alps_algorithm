@@ -10,31 +10,18 @@
 #include <vector>
 using namespace std;
 
-/**
- *  Segement Tree Node struct
- *  countValue : count for value in segment
- *  countSegement : count for segement(lower, upper)
- *  maxValue: max value for the node
- *  minValue: min value for the node
- */
+#define MAX_INT 4292967295
+
 struct TreeNode{
     int countValue;
     int countSegment;
-    int maxValue, minValue;
+    long maxValue, minValue;
     TreeNode * left;
     TreeNode * right;
 };
 
-/**
- *  Initial the Segment Tree, keep the num in vector
- *
- *  @param nums  the segmetn number
- *  @param left  left loc in vector<int>nums
- *  @param right right loc in vecotr<int>nums
- *
- *  @return SegmentTree node
- */
-TreeNode * InitSegmentTree(vector<int> nums, int left, int right){
+
+TreeNode * InitSegmentTree(vector<long> nums, long left, long right){
     if(left > right) return NULL;
     
     TreeNode * root = new TreeNode();
@@ -48,46 +35,16 @@ TreeNode * InitSegmentTree(vector<int> nums, int left, int right){
         return root;
     }
     
-    int mid = (left+right)/2;
+    long mid = (long)(left+right);
+    mid /= 2;
     root->left = InitSegmentTree(nums, left, mid);
     root->right = InitSegmentTree(nums, mid+1, right);
     
     return root;
 }
 
-/**
- *  add a value into the segment tree
- *
- *  @param value add value
- *  @param root  segment tree root node
- *
- *  @return add success : true, fail : false;
- */
-bool add(int value, TreeNode * root){
-    if (root == NULL) {
-        return false;
-    }
-    if (value < root->minValue || value > root->maxValue) {
-        return false;
-    }
-    root->countValue++;
-    if (root->left && value <= root->left->maxValue) {
-        return  add(value, root->left);
-    }else if(root->right && value >= root->right->minValue){
-        return add(value, root->right);
-    }
-    return true;
-}
 
-/**
- *  get the number loc in segment tree
- *
- *  @param lower segment lower number for search
- *  @param upper segment upper number for search
- *  @param root  segment tree root node
- *
- *  @return the count of number in segment tree between lower and upper
- */
+
 int getCount(int lower, int upper, TreeNode * root){
     if (root == NULL) {
         return 0;
@@ -104,16 +61,8 @@ int getCount(int lower, int upper, TreeNode * root){
     return leftCount + rightCount;
 }
 
-/**
- *  add a segment to segment tree
- *
- *  @param lower segment lower number for add
- *  @param upper segment upper number for add
- *  @param root  setment tree root node
- *
- *  @return add if success true:false;
- */
-bool addSegment(int lower, int upper, TreeNode *root){
+
+bool addSegment(long lower, long upper, TreeNode *root){
     if (root == NULL) {
         return false;
     }
@@ -127,7 +76,7 @@ bool addSegment(int lower, int upper, TreeNode *root){
     if (!root->left) {
         return false;
     }
-    int mid = root->left->maxValue;
+    long mid = root->left->maxValue;
     if (upper <= mid) {
         return addSegment(lower, upper, root->left);
     }
@@ -142,14 +91,7 @@ bool addSegment(int lower, int upper, TreeNode *root){
     return true;
 }
 
-/**
- *  get the count of segment contain the value
- *
- *  @param value value for search
- *  @param root  segment tree root node
- *
- *  @return return the count of segment
- */
+
 int getSegmentCount(int value, TreeNode * root){
     if (value < root->minValue || value > root->maxValue) {
         return 0;
@@ -158,26 +100,44 @@ int getSegmentCount(int value, TreeNode * root){
     if (root->maxValue == root->minValue) {
         return count;
     }
-    int mid = root->left->maxValue;
+    long mid = root->left->maxValue;
     if (value <= mid) {
         count += getSegmentCount(value, root->left);
     }
     if (value > mid) {
         count += getSegmentCount(value, root->right);
     }
-    return count;
+    if (count > 1) {
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+long transIPtoLong(string str){
+    
+    return 0;
 }
 
 
 int main(int argc, const char * argv[]) {
-    vector<int> temp = {0,1,2,3,4,5,6,7};
-    TreeNode * root = InitSegmentTree(temp, 0, (int)temp.size()-1);
-    add(4, root);
-    add(6, root);
-    cout<<getCount(4, 6, root)<<endl;
-    addSegment(2, 5, root);
-    addSegment(4, 6, root);
-    cout<<getSegmentCount(3, root)<<endl;
+    vector<long> IPVector; //防止溢出用Long
+    for (long i = 0; i < MAX_INT; i++) {
+        IPVector.push_back(i); //把IP简历一个线段树
+    }
+    TreeNode * root = InitSegmentTree(IPVector, 0, (int)IPVector.size()-1);
+    string ip_start, ip_end;
+    while (cin>>ip_start>>ip_end) { //这里假设输入的都是IP段,单个IP当做IP段起始和结束时一样的就可以了。
+        long ip_s = transIPtoLong(ip_start);
+        long ip_e = transIPtoLong(ip_end);
+        addSegment(ip_s, ip_e, root); //添加ip段
+    }
+    string check;
+    while (cin>>check) {
+        long check_ip = transIPtoLong(check);
+        cout<<getSegmentCount(check_ip, root)<<endl; //这里如果输出1 代表存在，输出0代表不存在
+    }
+    
     // insert code here...
     std::cout << "Hello, World!\n";
     return 0;
